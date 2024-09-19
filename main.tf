@@ -78,20 +78,21 @@ resource "azurerm_storage_share" "files_share" {
   quota                = 50
 }
 
-resource "azurerm_mysql_flexible_server" "mysql" {
-  name                = "stastestsqlserver"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  version             = "8.0.21"
-  administrator_login = "stas"
-  administrator_password = "Danceteam747!"
+#  **If you need to deploy azurerm_mysql_flexible_server**
 
-  storage {
-    size_gb = 20
-  }
+#resource "azurerm_mysql_flexible_server" "mysql" {
+# name                = "stastestsqlserver"
+# resource_group_name = azurerm_resource_group.rg.name
+# location            = azurerm_resource_group.rg.location
+# version             = "8.0.21"
+# administrator_login = "stas"
+# administrator_password = "Danceteam747!"
 
-  sku_name = "B_Standard_B1ms"
+# storage {
+#   size_gb = 20
+# }
 
+# sku_name = "B_Standard_B1ms"
  
 }
 
@@ -275,9 +276,9 @@ output "aks_cluster_name" {
   value = azurerm_kubernetes_cluster.aks.name
 }
 
-output "mysql_server_name" {
-  value = azurerm_mysql_flexible_server.mysql.name
-}
+# output "mysql_server_name" {
+# value = azurerm_mysql_flexible_server.mysql.name
+# }
 
 output "storage_account_name" {
   value = azurerm_storage_account.stasteststorage.name
