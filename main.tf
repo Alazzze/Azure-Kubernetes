@@ -94,7 +94,7 @@ resource "azurerm_storage_share" "files_share" {
 
 # sku_name = "B_Standard_B1ms"
  
-}
+# }
 
 resource "kubernetes_deployment" "wordpress" {
   metadata {
