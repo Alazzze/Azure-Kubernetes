@@ -96,6 +96,14 @@ resource "azurerm_storage_share" "files_share" {
  
 # }
 
+
+resource "kubernetes_namespace" "stastest" {
+  metadata {
+    name = "stastest"
+  }
+}
+
+
 resource "kubernetes_deployment" "wordpress" {
   metadata {
     name      = "wordpress"
